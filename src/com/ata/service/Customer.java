@@ -2,9 +2,9 @@ package com.ata.service;
 
 import java.util.ArrayList;
 
-import com.ata.Bean.ReservationBean;
-import com.ata.Bean.RouteBean;
-import com.ata.Bean.VehicleBean;
+import com.ata.bean.ReservationBean;
+import com.ata.bean.RouteBean;
+import com.ata.bean.VehicleBean;
 
 public interface Customer {
 	ArrayList<VehicleBean> viewVehiclesByType(String vehicleType) ;

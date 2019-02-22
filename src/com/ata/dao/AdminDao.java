@@ -1,4 +1,4 @@
-package com.ata.service;
+package com.ata.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,20 +8,21 @@ import com.ata.bean.ReservationBean;
 import com.ata.bean.RouteBean;
 import com.ata.bean.VehicleBean;
 
-public interface Administrator {
+public interface AdminDao {
 	
-	String addVehicle(VehicleBean vehicleBean);
+	String createVehicle(VehicleBean vehicleBean);
 	int deleteVehicle(ArrayList<String>vehicleID);
-	VehicleBean viewVehicle(String vehicleID);
-	boolean modifyVehicle(VehicleBean vehicleBean);
-	String addDriver(DriverBean driverBean );
+	VehicleBean findByID(String vehicleID);
+	boolean updateVehicle(VehicleBean vehicleBean);
+	String createDriver(DriverBean driverBean );
 	int deleteDriver(ArrayList<String> driverID);
 	boolean allotDriver(String reservationID,String driverID);
 	boolean modifyDriver(DriverBean driverBean);
-	String addRoute(RouteBean routeBean);
+	String createRoute(RouteBean routeBean);
 	int deleteRoute(ArrayList<String>routeID);
-	RouteBean viewRoute(String routeID);
+	RouteBean findbyID(String routeID);
 	boolean modifyRoute(RouteBean routeBean);
 	ArrayList<ReservationBean> viewBookingDetails(Date journeyDate,String source, String destination); 
+
 
 }
