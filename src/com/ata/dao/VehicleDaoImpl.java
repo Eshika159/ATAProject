@@ -16,7 +16,7 @@ public class VehicleDaoImpl implements XyzDao<VehicleBean> {
 	
 	@Override
 	public String create(VehicleBean vehicleBean) {
-	String vehicleid=	(String)ses.getCurrentSession().save(vehicleBean);
+	String vehicleid=(String)ses.getCurrentSession().save(vehicleBean);
 		return vehicleid;
 	}
 
@@ -31,21 +31,26 @@ public class VehicleDaoImpl implements XyzDao<VehicleBean> {
 	}
 
 	@Override
-	public boolean update(VehicleBean t) {
-		// TODO Auto-generated method stub
+	public boolean update(VehicleBean vehicleBean) {
+		try{
+		ses.getCurrentSession().update(vehicleBean);
+		return true;
+		}
+		catch(Exception e){}
+		
 		return false;
 	}
 
 	@Override
 	public VehicleBean findbyID(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	VehicleBean b=(VehicleBean) ses.getCurrentSession().createCriteria(VehicleBean.class,id);
+		return b;
 	}
 
 	@Override
 	public ArrayList<VehicleBean> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	ArrayList<VehicleBean>li=(ArrayList<VehicleBean>) ses.getCurrentSession().createCriteria(VehicleBean.class).list();
+		return li;
 	}
 
 }
