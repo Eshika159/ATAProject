@@ -2,8 +2,16 @@ package com.ata.bean;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="ata_tbl_user_profile")
 public class ProfileBean {
 	
+	@Id
 	private String userID;
 	private String firstName;
 	private String lastName;
@@ -16,6 +24,8 @@ public class ProfileBean {
 	private String pincode;
 	private String mobileNo;
 	private String emailID;
+	
+	@Transient
 	private String password;
 	
 	public ProfileBean() {

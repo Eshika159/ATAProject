@@ -9,7 +9,7 @@ import com.ata.bean.DriverBean;
 import com.ata.bean.ReservationBean;
 import com.ata.bean.RouteBean;
 import com.ata.bean.VehicleBean;
-import com.ata.dao.AdminDaoImpl;
+import com.ata.dao.old.AdminDaoImpl;
 
 public class AdministratorImpl implements Administrator{
 	

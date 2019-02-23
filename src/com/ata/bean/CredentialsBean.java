@@ -1,10 +1,21 @@
 package com.ata.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.ColumnDefault;
+
+
+@Entity
+@Table(name="ata_tbl_user_credentials")
 public class CredentialsBean {
+	@Id
 	private String userID;
 	private String password;
-	private String userType;
-	private int loginStatus;
+	
+	private String userType="C";
+	private int loginStatus=0;
 	
 	public CredentialsBean() {
 		super();

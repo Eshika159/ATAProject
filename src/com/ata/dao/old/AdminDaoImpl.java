@@ -1,4 +1,4 @@
-package com.ata.dao;
+package com.ata.dao.old;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +12,7 @@ import com.ata.bean.DriverBean;
 import com.ata.bean.ReservationBean;
 import com.ata.bean.RouteBean;
 import com.ata.bean.VehicleBean;
+import com.ata.service.Customer;
 
 @Repository
 public class AdminDaoImpl implements AdminDao{
@@ -101,6 +102,7 @@ public class AdminDaoImpl implements AdminDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	
 
 }
