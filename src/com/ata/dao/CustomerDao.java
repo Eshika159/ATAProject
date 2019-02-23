@@ -1,4 +1,4 @@
-package com.ata.service;
+package com.ata.dao;
 
 import java.util.ArrayList;
 
@@ -6,11 +6,10 @@ import com.ata.bean.ReservationBean;
 import com.ata.bean.RouteBean;
 import com.ata.bean.VehicleBean;
 
-public interface Customer {
-
+public interface CustomerDao {
 	ArrayList<VehicleBean> viewVehiclesByType(String vehicleType) ;
 	 ArrayList<VehicleBean> viewVehicleBySeats(int noOfSeats) ;
-	 ArrayList<RouteBean> viewAllRoutes() ;
+	 ArrayList<RouteBean> findAllRoutes() ;
 	 String bookVehicle(ReservationBean reservationBean); 
 	 boolean cancelBooking(String userID, String reservationID); 
 	 ReservationBean viewBookingDetails(String reservationID) ;

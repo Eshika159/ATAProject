@@ -1,6 +1,13 @@
 package com.ata.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ata_tbl_vehicle")
 public class VehicleBean {
+	@Id
 	private String vehicleID;
 	private String name;
 	private String type;
@@ -9,6 +16,7 @@ public class VehicleBean {
 	private double farePerKM;
 
 	public VehicleBean() {
+		
 		super();
 	}
 

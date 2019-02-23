@@ -1,27 +1,32 @@
-package com.ata.service;
+package com.ata.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ata.bean.DriverBean;
 import com.ata.bean.ReservationBean;
 import com.ata.bean.RouteBean;
 import com.ata.bean.VehicleBean;
-import com.ata.dao.AdminDaoImpl;
 
-public class AdministratorImpl implements Administrator{
+@Repository
+public class AdminDaoImpl implements AdminDao{
 	
+
 	@Autowired
-	AdminDaoImpl adminDaoImpl;
+	SessionFactory sf;
 	
+	@Transactional
 	@Override
-	public String addVehicle(VehicleBean vehicleBean) {
+	public String createVehicle(VehicleBean vehicleBean) {
 		
-		adminDaoImpl.createVehicle(vehicleBean);
-		// TODO Auto-generated method stub
-		return null;
+		sf.getCurrentSession().save(vehicleBean);
+		
+		return "";
 	}
 
 	@Override
@@ -31,19 +36,19 @@ public class AdministratorImpl implements Administrator{
 	}
 
 	@Override
-	public VehicleBean viewVehicle(String vehicleID) {
+	public VehicleBean findByID(String vehicleID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean modifyVehicle(VehicleBean vehicleBean) {
+	public boolean updateVehicle(VehicleBean vehicleBean) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public String addDriver(DriverBean driverBean) {
+	public String createDriver(DriverBean driverBean) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -67,7 +72,7 @@ public class AdministratorImpl implements Administrator{
 	}
 
 	@Override
-	public String addRoute(RouteBean routeBean) {
+	public String createRoute(RouteBean routeBean) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -79,7 +84,7 @@ public class AdministratorImpl implements Administrator{
 	}
 
 	@Override
-	public RouteBean viewRoute(String routeID) {
+	public RouteBean findbyID(String routeID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -96,5 +101,6 @@ public class AdministratorImpl implements Administrator{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }
