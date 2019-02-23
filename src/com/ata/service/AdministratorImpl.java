@@ -9,17 +9,15 @@ import com.ata.bean.DriverBean;
 import com.ata.bean.ReservationBean;
 import com.ata.bean.RouteBean;
 import com.ata.bean.VehicleBean;
-import com.ata.dao.AdminDaoImpl;
+import com.ata.daoOld.AdminDaoImpl;
 
 public class AdministratorImpl implements Administrator{
 	
-	@Autowired
-	AdminDaoImpl adminDaoImpl;
 	
 	@Override
 	public String addVehicle(VehicleBean vehicleBean) {
 		
-		adminDaoImpl.createVehicle(vehicleBean);
+		//adminDaoImpl.createVehicle(vehicleBean);
 		// TODO Auto-generated method stub
 		return null;
 	}
