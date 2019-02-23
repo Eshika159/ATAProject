@@ -42,8 +42,8 @@ public class VehicleDaoImpl implements XyzDao<VehicleBean> {
 	}
 
 	@Override
-	public VehicleBean findbyID(String id) {
-	VehicleBean b=(VehicleBean) ses.getCurrentSession().createCriteria(VehicleBean.class,id);
+	public VehicleBean findByID(String s) {
+	VehicleBean b=(VehicleBean) ses.getCurrentSession().createCriteria(VehicleBean.class,s);
 		return b;
 	}
 
